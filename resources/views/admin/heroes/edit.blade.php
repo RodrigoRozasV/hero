@@ -4,7 +4,8 @@
     <h1>Editar Heroe</h1>
 
     <form action="{{ route('heroes.update', ['id' => $hero->id]) }}" method="post">
-    @csrf
+        @csrf
+        @method('PUT')
         <div class="form-group">
             <label for="name">Nombre: </label>
             <input type="text" class="form-control" id="name" name="name" value="{{ $hero->name }}" placeholder="Ingrese un nombre" required>

@@ -43,12 +43,21 @@ class HeroeController extends Controller
 
         $hero->save();
 
-        return redirect()->route('heroes');
+        return redirect()->route('heroes.index');
     }
 
     public function edit($id){
         $hero = Hero::find($id);
 
         return view('admin.heroes.edit', ['hero' => $hero]);
+    }
+
+    public function destroy($id){
+        $hero = Hero::find($id);
+
+        $hero->delete();
+
+        return redirect()->route('heroes.index');
+
     }
 }
