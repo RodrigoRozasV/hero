@@ -14,3 +14,13 @@
 Route::get('/', function () {
     return view('welcome');
 });
+
+Route::group(['prefix' => 'admin'], function(){
+    Route::get('/', 'AdminController@index')->name('admin');
+    Route::get('heroes', 'HeroeController@index')->name('heroes');
+    Route::get('items', 'ItemController@index')->name('items');
+    Route::get('enemies', 'EnemyController@index')->name('enemies');
+});
+
+
+
