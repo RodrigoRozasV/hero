@@ -20,8 +20,9 @@ Route::group(['prefix' => 'admin'], function(){
 
     Route::resource('heroes', 'HeroeController');
 
-    Route::get('items', 'ItemController@index')->name('items');
-    Route::get('enemies', 'EnemyController@index')->name('enemies');
+    Route::resource('item', 'ItemController');
+
+    Route::resource('enemy', 'EnemyController');
 });
 
 
