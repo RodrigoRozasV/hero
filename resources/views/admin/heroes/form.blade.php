@@ -23,3 +23,7 @@
     <label for="coins">Monedas: </label>
     <input type="number" class="form-control" id="coins" name="coins" @isset($hero) value="{{ $hero->coins }}" @endisset placeholder="Ingrese la cantidad de monedas" required>
 </div>
+<div class="form-group">
+    <label for="img_path">Imagen: </label>
+    <input type="file"  id="img_path" name="img_path" @isset($enemy) value="{{ $enemy->img_path }}" @endisset placeholder="Ingrese una imagen" required>
+</div>
