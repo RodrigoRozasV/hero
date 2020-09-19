@@ -16,3 +16,20 @@ use Illuminate\Http\Request;
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });
+//Endpoint de testeo
+Route::get('/', 'APIController@index');
+
+//Endpoint de heroes
+Route::get('heroes', 'APIController@getAllHeroes');
+Route::get('heroes/{id}', 'APIController@getHero');
+
+//Endpoint de enemies
+Route::get('enemies', 'APIController@getAllEnemies');
+Route::get('enemies/{id}', 'APIController@getEnemy');
+
+//Endpoint de enemies
+Route::get('items', 'APIController@getAllItems');
+Route::get('items/{id}', 'APIController@getItem');
+
+//Endpoint de Battle System
+Route::get('bs/{heroId}/{enemyId}', 'APIController@runManualBS');
